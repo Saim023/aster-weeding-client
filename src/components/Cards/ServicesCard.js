@@ -8,7 +8,7 @@ const ServicesCard = ({ srv }) => {
     console.log(srv)
     return (
         <div>
-            <Card>
+            <Card className='box-shadow'>
                 <Card.Img variant="top" src={srv.image} />
                 <Card.Body>
                     <Card.Title>{srv.title}</Card.Title>
