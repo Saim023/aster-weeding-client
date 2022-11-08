@@ -18,7 +18,7 @@ const Services = () => {
 
     return (
         <div>
-            <h1 className='text-center my-4'>Our Amazing Services</h1>
+            <h1 className='text-center mt-5 mb-5'>Our Amazing Services</h1>
             <div className='service-card'>
                 {
                     data.map(srv => <ServicesCard

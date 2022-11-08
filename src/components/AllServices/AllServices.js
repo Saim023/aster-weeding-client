@@ -2,12 +2,17 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const AllServices = ({ all }) => {
     return (
         <div>
             <Card>
-                <Card.Img variant="top" src={all.image} />
+                <PhotoProvider>
+                    <PhotoView src={all.image}>
+                        <Card.Img variant="top" src={all.image} style={{ objectFit: 'cover' }} />
+                    </PhotoView>
+                </PhotoProvider>
                 <Card.Body>
                     <Card.Title>{all.title}</Card.Title>
                     <Card.Text>
