@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeCarousel from '../../components/Carousel/HomeCarousel';
 import SectionOne from '../../components/Sections/SectionOne';
+import SectionTwo from '../../components/Sections/SectionTwo';
 import Services from '../../Services/Services';
 
 const Home = () => {
@@ -12,6 +13,9 @@ const Home = () => {
             </div>
             <div>
                 <SectionOne></SectionOne>
+            </div>
+            <div>
+                <SectionTwo></SectionTwo>
             </div>
         </div>
     );
