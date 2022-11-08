@@ -4,6 +4,14 @@ import './SectionTwo.css';
 import SectImg1 from '../../assets/images/wedding-9.jpg';
 import SectImg2 from '../../assets/images/wedding-15.jpg';
 import SectImg3 from '../../assets/images/wedding-13.jpg';
+import SectImg4 from '../../assets/images/wedding-12.jpg';
+import SectImg5 from '../../assets/images/wedding-1.jpg';
+import SectImg6 from '../../assets/images/wedding-2.jpg';
+import SectImg7 from '../../assets/images/wedding-3.jpg';
+import SectImg8 from '../../assets/images/wedding-4.jpg';
+import SectImg9 from '../../assets/images/wedding-5.jpg';
+import SectImg10 from '../../assets/images/wedding-6.jpg';
+import SectImg11 from '../../assets/images/wedding-7.jpg';
 
 const SectionTwo = () => {
     return (
@@ -34,10 +42,15 @@ const SectionTwo = () => {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                <div>
-                    <h1>left side</h1>
-                    <h1>left side</h1>
-                    <h1>left side</h1>
+                <div className='right-sect'>
+                    <img src={SectImg4} alt="" />
+                    <img src={SectImg5} alt="" />
+                    <img src={SectImg6} alt="" />
+                    <img src={SectImg7} alt="" />
+                    <img src={SectImg8} alt="" />
+                    <img src={SectImg9} alt="" />
+                    <img src={SectImg10} alt="" />
+                    <img src={SectImg11} alt="" />
                 </div>
             </div>
         </div>

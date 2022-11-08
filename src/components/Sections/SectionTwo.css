@@ -5,3 +5,21 @@
 	margin-left: 20px;
 	margin-right: 20px;
 }
+.right-sect {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.right-sect img {
+	width: 300px;
+	height: 175px;
+}
+.right-sect > img:hover {
+	transform: scale(1.4);
+	z-index: 2;
+	-webkit-transform: scale(1.4);
+	-moz-transform: scale(1.4);
+	-ms-transform: scale(1.4);
+	-o-transform: scale(1.4);
+}
