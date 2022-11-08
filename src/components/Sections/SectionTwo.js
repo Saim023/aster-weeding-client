@@ -12,37 +12,16 @@ import SectImg8 from '../../assets/images/wedding-4.jpg';
 import SectImg9 from '../../assets/images/wedding-5.jpg';
 import SectImg10 from '../../assets/images/wedding-6.jpg';
 import SectImg11 from '../../assets/images/wedding-7.jpg';
+import Video2 from '../../assets/images/video3.mp4';
 
 const SectionTwo = () => {
     return (
         <div className='mt-5'>
             <div className='section-two-container'>
                 <div className='w-50'>
-                    <Carousel>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={SectImg1}
-                                alt="First slide"
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={SectImg2}
-                                alt="Second slide"
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={SectImg3}
-                                alt="Third slide"
-                            />
-                        </Carousel.Item>
-                    </Carousel>
+                    <video src={Video2} autoPlay width='100%' controls loop></video>
                 </div>
-                <div className='right-sect'>
+                <div className='right-sect img-fluid'>
                     <img src={SectImg4} alt="" />
                     <img src={SectImg5} alt="" />
                     <img src={SectImg6} alt="" />
