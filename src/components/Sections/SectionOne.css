@@ -1,0 +1,8 @@
+.section-one-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.headings span {
+	color: gold;
+}
