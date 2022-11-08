@@ -3,6 +3,7 @@ import SectionTwo from "../../components/Sections/SectionTwo";
 import Main from "../../layouts/Main/Main";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import ServiceDetails from "../../pages/ServiceDetai;s/ServiceDetails";
 import Footer from "../../pages/Shared/Footer/Footer";
 import SignUp from "../../pages/SignUp/SignUp";
 import Services from "../../Services/Services";
@@ -40,11 +41,11 @@ const router = createBrowserRouter([
                 element: <TotalServices></TotalServices>,
                 loader: () => fetch('http://localhost:5000/all-services')
             },
-            // {
-            //     path: '/checkout/:id',
-            //     element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>,
-            //     loader: ({ params }) => fetch(`/${params.id}`)
-            // },
+            {
+                path: '/service-details/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/service-details/${params.id}`)
+            },
             {
                 path: '/orders',
                 element: <PrivateRoutes></PrivateRoutes>

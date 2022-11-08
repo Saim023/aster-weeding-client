@@ -6,8 +6,7 @@ const TotalServices = () => {
     const allServices = useLoaderData();
     return (
         <div>
-            <h1>Total Services{allServices.length}</h1>
-            <div className='service-card'>
+            <div className='service-card mt-4'>
                 {
                     allServices.map(all => <AllServices
                         key={all._id}
