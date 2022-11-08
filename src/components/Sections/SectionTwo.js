@@ -18,10 +18,10 @@ const SectionTwo = () => {
     return (
         <div className='mt-5'>
             <div className='section-two-container'>
-                <div className='w-50 box-shadow'>
+                <div className='w-50'>
                     <video src={Video2} autoPlay width='100%' controls loop></video>
                 </div>
-                <div className='right-sect box-shadow'>
+                <div className='right-sect '>
                     <img src={SectImg4} alt="" />
                     <img src={SectImg5} alt="" />
                     <img src={SectImg6} alt="" />

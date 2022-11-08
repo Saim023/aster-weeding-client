@@ -8,7 +8,7 @@
 .right-sect {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
+	gap: 15px;
 }
 
 .right-sect img {
@@ -23,4 +23,13 @@
 	-moz-transform: scale(1.4);
 	-ms-transform: scale(1.4);
 	-o-transform: scale(1.4);
+}
+
+/* media query */
+@media only screen and (max-width: 600px) {
+	.right-sect {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 15px;
+	}
 }
