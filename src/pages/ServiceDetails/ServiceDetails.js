@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -47,8 +49,26 @@ const ServiceDetails = () => {
                             review={review}
                         ></Reviews>)
                     }
-
-                    <Button className=' mt-4' variant="outline-info">Add a review</Button>
+                    <form className='mt-5 w-75 m-auto'>
+                        <Form.Floating className="mb-3">
+                            <Form.Control
+                                id="floatingInputCustom"
+                                type="email"
+                                placeholder="name@example.com"
+                                name='email'
+                            />
+                            <label htmlFor="floatingInputCustom">Email Address</label>
+                        </Form.Floating>
+                        <FloatingLabel controlId="floatingTextarea2" label="Review">
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Leave a review here"
+                                name='review'
+                                style={{ height: '100px' }}
+                            />
+                        </FloatingLabel>
+                        <Button type='submit' className=' mt-3' variant="outline-info">Add a review</Button>
+                    </form>
 
                 </Col>
             </Row>
