@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import SectionTwo from "../../components/Sections/SectionTwo";
+import Reviews from "../../components/Reviews/Reviews";
 import Main from "../../layouts/Main/Main";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
-import ServiceDetails from "../../pages/ServiceDetai;s/ServiceDetails";
+import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Footer from "../../pages/Shared/Footer/Footer";
 import SignUp from "../../pages/SignUp/SignUp";
 import Services from "../../Services/Services";
@@ -44,11 +44,11 @@ const router = createBrowserRouter([
             {
                 path: '/service-details/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/service-details/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/service-details/${params.id}`),
             },
             {
-                path: '/orders',
-                element: <PrivateRoutes></PrivateRoutes>
+                path: '/reviews',
+                element: <Reviews></Reviews>
             }
         ]
     }

@@ -7,7 +7,7 @@ const PrivateRoutes = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <h1>Loading...</h1>
+        return <h1 className='text-center mt-4'>Loading...</h1>
     }
     if (user) {
         return children;

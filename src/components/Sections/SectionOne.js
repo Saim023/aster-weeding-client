@@ -8,7 +8,7 @@ const SectionOne = () => {
             <div className='section-one-container'>
                 <div className='headings'>
                     <h1>You can sign up a time for <span>Wedding Photography</span></h1>
-                    <p>Brings Your Hope To Us, We Will Build Your Hope <span className='text-bold'>Like A Dream!!</span></p>
+                    <p className='text-center'>Brings Your Hope To Us, We Will Build Your Hope <span className='text-bold'>Like A Dream!!</span></p>
                 </div>
                 <div>
                     <img src={SectImg} alt="" />

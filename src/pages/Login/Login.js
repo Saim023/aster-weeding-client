@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -31,6 +31,15 @@ const Login = () => {
             .catch(error => console.error(error))
     }
 
+    const handleGoogleLogin = () => {
+        googleSignIn(provider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <Form onSubmit={handleLogin} className='mt-5 m-auto w-25'>
@@ -46,6 +55,10 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
+                <Link className='ms-3' to='/signup'>Don't have an account? sign up now!</Link>
+                <div className='mt-3'>
+                    <button onClick={handleGoogleLogin}>Login With Google</button>
+                </div>
             </Form>
         </div>
     );
