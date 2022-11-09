@@ -18,7 +18,7 @@ const SectionTwo = () => {
     return (
         <div className='mt-5'>
             <div className='section-two-container'>
-                <div className='w-50'>
+                <div className='w-50 xs:d-none sm:d-none'>
                     <video src={Video2} autoPlay width='100%' controls loop></video>
                 </div>
                 <div className='right-sect '>
