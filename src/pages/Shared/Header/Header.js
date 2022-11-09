@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -29,8 +30,12 @@ const Header = () => {
                             user?.email
                                 ?
                                 <>
-                                    <Link className='mx-3 text-decoration-none text-white'>{user?.displayName}</Link>
+                                    <Link className='mx-3 text-decoration-none text-white' to='/my-reviews'>My reviews</Link>
+                                    <Link className='mx-3 text-decoration-none text-white' to='/add-service'>Add service</Link>
                                     <Link onClick={handleLogout} className='mx-3 text-decoration-none text-white'>Logout</Link>
+
+                                    <Link className='mx-3 text-decoration-none text-white'><Image src={user?.photoURL} style={{ height: '30px' }} roundedCircle></Image></Link>
+                                    <Link className='mx-3 text-decoration-none text-white'>{user?.displayName}</Link>
                                 </>
                                 :
                                 <>

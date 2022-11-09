@@ -1,25 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
+import toast, { Toaster } from 'react-hot-toast';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Reviews from '../../components/Reviews/Reviews';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const ServiceDetails = () => {
+    const { user } = useContext(AuthContext);
     const details = useLoaderData();
     const [userReview, setUserReview] = useState();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/review?reviewId=${details._id}`)
             .then(res => res.json())
             .then(data => setUserReview(data))
     }, [])
 
 
-
     const handleReview = (event) => {
+        if (!user?.email) {
+            return alert('Please login first')
+        }
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -27,9 +33,10 @@ const ServiceDetails = () => {
         const review = form.review.value;
 
         const reviews = {
+            reviewId: details._id,
             name: name,
             email: email,
-            review: review
+            review: review,
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -43,7 +50,7 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Order Placed Successfully')
+                    toast.success('Review Added Successfully !')
                     form.reset()
                 }
             })
@@ -93,8 +100,12 @@ const ServiceDetails = () => {
                         <br />
                         <br />
                         <button type='submit'>Add your review</button>
-                    </form>
+                        <br />
+                        <br />
+                        {!user?.email && <><p>Please login to add a review</p> <Link to='/login'>Login</Link></>}
 
+                        <Toaster />
+                    </form>
                 </Col>
             </Row>
         </Container>
