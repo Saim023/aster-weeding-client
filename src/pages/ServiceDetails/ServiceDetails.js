@@ -17,6 +17,39 @@ const ServiceDetails = () => {
             .then(data => setUserReview(data))
     }, [])
 
+
+
+    const handleReview = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const review = form.review.value;
+
+        const reviews = {
+            name: name,
+            email: email,
+            review: review
+        }
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviews)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Order Placed Successfully')
+                    form.reset()
+                }
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Container>
             <Row>
@@ -49,25 +82,17 @@ const ServiceDetails = () => {
                             review={review}
                         ></Reviews>)
                     }
-                    <form className='mt-5 w-75 m-auto'>
-                        <Form.Floating className="mb-3">
-                            <Form.Control
-                                id="floatingInputCustom"
-                                type="email"
-                                placeholder="name@example.com"
-                                name='email'
-                            />
-                            <label htmlFor="floatingInputCustom">Email Address</label>
-                        </Form.Floating>
-                        <FloatingLabel controlId="floatingTextarea2" label="Review">
-                            <Form.Control
-                                as="textarea"
-                                placeholder="Leave a review here"
-                                name='review'
-                                style={{ height: '100px' }}
-                            />
-                        </FloatingLabel>
-                        <Button type='submit' className=' mt-3' variant="outline-info">Add a review</Button>
+                    <form onSubmit={handleReview} className='mt-5 w-75 m-auto'>
+                        <input type="text" name='name' placeholder='Name' required />
+                        <br />
+                        <br />
+                        <input type="email" name='email' placeholder='Email' required />
+                        <br />
+                        <br />
+                        <textarea name="review" id="" cols="80" rows="10" placeholder='Review' required></textarea>
+                        <br />
+                        <br />
+                        <button type='submit'>Add your review</button>
                     </form>
 
                 </Col>

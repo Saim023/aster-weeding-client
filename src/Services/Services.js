@@ -21,7 +21,7 @@ const Services = () => {
             <h1 className='text-center mt-5 mb-5'>Our Amazing Services</h1>
             <div className='service-card'>
                 {
-                    data.map(srv => <ServicesCard
+                    data && data.map(srv => <ServicesCard
                         key={srv._id}
                         srv={srv}
                     ></ServicesCard>)
