@@ -2,9 +2,11 @@ import React from 'react';
 import HomeCarousel from '../../components/Carousel/HomeCarousel';
 import SectionOne from '../../components/Sections/SectionOne';
 import SectionTwo from '../../components/Sections/SectionTwo';
+import useTitle from '../../hooks/useTitle';
 import Services from '../../Services/Services';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <HomeCarousel></HomeCarousel>
