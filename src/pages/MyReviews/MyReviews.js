@@ -36,13 +36,11 @@ const MyReviews = () => {
 
     }
 
+
     return (
         <div>
             <Toaster></Toaster>
             <h1 className='text-center mt-4 mb-4'>My Reviews</h1>
-            {
-                !myReview || <h1 className='text-center text-warning'>No reviews were added</h1>
-            }
             {
                 myReview && myReview.map(my => <MyRev
                     key={my.reviewId}

@@ -6,7 +6,7 @@ import useTitle from '../../hooks/useTitle';
 import Services from '../../Services/Services';
 
 const Home = () => {
-    useTitle('Home')
+    useTitle('Aster Wedding Home')
     return (
         <div>
             <HomeCarousel></HomeCarousel>
